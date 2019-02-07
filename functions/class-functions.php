@@ -12,6 +12,7 @@ class Functions
 		$this->theme = wp_get_theme();
 
 		$this->load_dependencies();
+		$this->define_global_hooks();
 		$this->define_public_hooks();
 		$this->define_admin_hooks();
 	}
@@ -33,7 +34,8 @@ class Functions
 		if( ! is_admin() )
 		{
 			$functions_public = new Functions_Public( $this->get_theme_name(), $this->get_version() );
-
+			
+			/** Enqueue styles and scripts. **/
 			$this->loader->add_action( 'wp_enqueue_scripts', $functions_public, 'enqueue_styles' );
 			$this->loader->add_action( 'wp_enqueue_scripts', $functions_public, 'enqueue_scripts' );
 
@@ -49,15 +51,40 @@ class Functions
 		{
 			$functions_admin = new Functions_Admin( $this->get_theme_name(), $this->get_version() );
 			
+			/** Enqueue styles and scripts. **/
 			$this->loader->add_action( 'admin_enqueue_scripts', $functions_admin, 'enqueue_styles' );
 			$this->loader->add_action( 'admin_enqueue_scripts', $functions_admin, 'enqueue_scripts' );
+
+			/** Register navigation menus. **/
+			$this->loader->add_action( 'init' , $functions_admin , 'register_nav_menus' );
+
+			/** Register widgert areas. **/
+			$this->loader->add_action( 'widgets_init' , $functions_admin , 'register_widget_areas' );
+
+			/** Register a custom posttypes. **/
+			$this->loader->add_action( 'init' , $functions_admin , 'register_custom_posttypes' );
+
+			/** Register custom shortcodes. **/
+			$this->loader->add_action( 'init' , $functions_admin , 'register_shortcodes' );
 		}
 	}
 
 
 	private function define_global_hooks()
 	{	
-		//$functions_admin = new Functions_Admin( $this->get_theme_name(), $this->get_version() );
+		$functions_global = new Functions_Global( $this->get_theme_name(), $this->get_version() );
+
+		/** Remove emoji's header **/
+		$this->loader->add_action( 'init' , $functions_global , 'disable_emoji_dequeue_script' , 10 );
+		
+		/** Remove junk from header **/
+		$this->loader->add_action( 'init' , $functions_global , 'clean_up_header' );
+
+		/** Remove the rest api **/
+		$this->loader->add_action( 'after_setup_theme' , $functions_global , 'remove_json_api' );
+
+		/** Remove wpembed scripts **/
+		$this->loader->add_action( 'wp_footer' , $functions_global , 'remove_wpembed_scripts' );
 	}
 
 
