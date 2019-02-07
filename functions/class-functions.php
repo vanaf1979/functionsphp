@@ -38,19 +38,22 @@ class Functions
 			/** Enqueue styles and scripts. **/
 			$this->loader->add_action( 'wp_enqueue_scripts', $functions_public, 'enqueue_styles' );
 			$this->loader->add_action( 'wp_enqueue_scripts', $functions_public, 'enqueue_scripts' );
-
-			$this->loader->add_action( 'after_setup_theme' , $functions_public , 'theme_support' , 1 , 1 );
+			
+			/** Register image sizes. **/
 			$this->loader->add_action( 'setup_theme' , $functions_public , 'register_thumbnail_sizes' , 1 );
+
+			/** Add theme support items. **/
+			$this->loader->add_action( 'after_setup_theme' , $functions_public , 'theme_support' , 1 , 1 );
 		}
 	}
 
 
-    private function define_admin_hooks()
+	private function define_admin_hooks()
 	{	
 		if( is_admin() )
 		{
 			$functions_admin = new Functions_Admin( $this->get_theme_name(), $this->get_version() );
-			
+
 			/** Enqueue styles and scripts. **/
 			$this->loader->add_action( 'admin_enqueue_scripts', $functions_admin, 'enqueue_styles' );
 			$this->loader->add_action( 'admin_enqueue_scripts', $functions_admin, 'enqueue_scripts' );
