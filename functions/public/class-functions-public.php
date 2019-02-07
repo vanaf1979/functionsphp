@@ -17,21 +17,12 @@ class Functions_Public
 
 	public function enqueue_styles()
 	{
-		wp_enqueue_style( $this->theme_name  . '-css', get_stylesheet_directory_uri() . '/public/css/header.css', array() , $this->version , 'screen' );
-
-		wp_enqueue_style( $this->theme_name . '-ie9' , get_stylesheet_directory_uri() . '/public/css/header-ie9.css', array() , $this->version , 'screen' );
-		wp_style_add_data( $this->theme_name . '-ie9' , 'conditional' , 'IE 9' );
-
-		wp_enqueue_style( $this->theme_name . '-lt-ie8' , get_stylesheet_directory_uri() . '/public/css/header-ie8.css', array() , $this->version , 'screen' );
-		wp_style_add_data( $this->theme_name . '-lt-ie8' , 'conditional' , 'lt IE 9' );
+		wp_enqueue_style( $this->theme_name  . '-css', get_stylesheet_directory_uri() . '/style.css', array() , $this->version , 'screen' );
 	}
 
 
 	public function enqueue_scripts()
 	{
-		wp_enqueue_script( $this->theme_name . '-html5' , 'https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js' , array() , $this->version , true );
-    	wp_script_add_data( $this->theme_name . '-html5'  , 'conditional' , 'lt IE 9' );
-		
 		wp_enqueue_script( $this->theme_name . '-js' , get_stylesheet_directory_uri() . '/public/js/app.js' , array() , $this->version , true );
 	}
 
