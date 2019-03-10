@@ -7,7 +7,7 @@ class Functionsphp_Admin {
 	private $version;
 	
 
-	public function __construct( $theme_name, $version ) {
+	public function __construct( $theme_name , $version ) {
 		
 		$this->theme_name = $theme_name;
 		$this->version = $version;
@@ -21,7 +21,7 @@ class Functionsphp_Admin {
 
 		if( $page == 'post.php' ) {
 
-			wp_enqueue_style( $this->theme_name  . '-css', get_stylesheet_directory_uri() . '/public/css/admin.css', array() , $this->version , 'screen' );
+			wp_enqueue_style( $this->theme_name  . '-css' , get_stylesheet_directory_uri() . '/public/css/admin.css' , array() , $this->version , 'screen' );
 			
 		}
 
