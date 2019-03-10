@@ -17,7 +17,7 @@ class Functionsphp_Admin {
 
 	public function enqueue_styles( $page ) {
 		
-		// https://developer.wordpress.org/reference/functions/wp_enqueue_style/
+		// Ref: https://developer.wordpress.org/reference/functions/wp_enqueue_style/
 
 		if( $page == 'post.php' ) {
 
@@ -30,7 +30,7 @@ class Functionsphp_Admin {
 
 	public function enqueue_scripts( $page ) {
 		
-		// https://developer.wordpress.org/reference/functions/wp_enqueue_script/
+		// Ref: https://developer.wordpress.org/reference/functions/wp_enqueue_script/
 
 		if( $page == 'post.php' ) {
 
@@ -43,7 +43,7 @@ class Functionsphp_Admin {
 
 	public function register_nav_menus() {
 		
-		// https://codex.wordpress.org/Navigation_Menus
+		// Ref: https://codex.wordpress.org/Navigation_Menus
 
 		register_nav_menus(
 			array(
@@ -58,7 +58,7 @@ class Functionsphp_Admin {
 
 	function register_widget_areas() {
 
-		// https://codex.wordpress.org/Widgetizing_Themes
+		// Ref: https://codex.wordpress.org/Widgetizing_Themes
 		
 		register_sidebar( array(
 			'name'          => 'Footer area one',
@@ -101,7 +101,7 @@ class Functionsphp_Admin {
 
 	public function register_custom_posttypes() {
 		
-		// https://codex.wordpress.org/Function_Reference/register_post_type
+		// Ref: https://codex.wordpress.org/Function_Reference/register_post_type
 
 		// $args = array(
 		// 	'label' => __('Portfolio'),
@@ -121,7 +121,7 @@ class Functionsphp_Admin {
 
 	public function register_shortcodes( ) {
 		
-		/* https://codex.wordpress.org/Shortcode_API */
+		/* Ref: https://codex.wordpress.org/Shortcode_API */
 		
 		add_shortcode( 'span' , array(  $this , 'handle_span_tag') );
 
