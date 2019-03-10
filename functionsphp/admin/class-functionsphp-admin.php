@@ -1,33 +1,48 @@
 <?php
 
-class Functions_Admin
-{
+class Functionsphp_Admin {
+
 	private $theme_name;
 
 	private $version;
+	
 
-	public function __construct( $theme_name, $version )
-	{
+	public function __construct( $theme_name, $version ) {
+		
 		$this->theme_name = $theme_name;
 		$this->version = $version;
+
 	}
 
 
-	public function enqueue_styles()
-	{
-		// wp_enqueue_style( $this->theme_name  . '-css', get_stylesheet_directory_uri() . '/public/css/admin.css', array() , $this->version , 'screen' );
+	public function enqueue_styles( $page ) {
+		
+		// https://developer.wordpress.org/reference/functions/wp_enqueue_style/
+
+		if( $page == 'post.php' ) {
+
+			wp_enqueue_style( $this->theme_name  . '-css', get_stylesheet_directory_uri() . '/public/css/admin.css', array() , $this->version , 'screen' );
+			
+		}
+
 	}
 
 
-	public function enqueue_scripts()
-	{
-		// wp_enqueue_script( $this->theme_name . '-js' , get_stylesheet_directory_uri() . '/public/js/admin.js' , array() , $this->version , true );
+	public function enqueue_scripts( $page ) {
+		
+		// https://developer.wordpress.org/reference/functions/wp_enqueue_script/
+
+		if( $page == 'post.php' ) {
+
+			wp_enqueue_script( $this->theme_name . '-js' , get_stylesheet_directory_uri() . '/public/js/admin.js' , array() , $this->version , true );
+		
+		}
+		
 	}
 
 
-	public function register_nav_menus()
-	{
-		// NOTE: Read the codex on registering custom menus
+	public function register_nav_menus() {
+		
 		// https://codex.wordpress.org/Navigation_Menus
 
 		register_nav_menus(
@@ -37,12 +52,12 @@ class Functions_Admin
 				'mobile-menu' => __( 'Mobile Menu' )
 			)
 		);
+
 	}
 
 
-	function register_widget_areas()
-	{
-		// NOTE: Read the codex on theme widget area's
+	function register_widget_areas() {
+
 		// https://codex.wordpress.org/Widgetizing_Themes
 		
 		register_sidebar( array(
@@ -80,12 +95,12 @@ class Functions_Admin
 			'before_title'  => '<h4 class="footer-area-four">',
 			'after_title'   => '</h4>',
 		));
+
 	}
 
 
-	public function register_custom_posttypes()
-	{
-		// NOTE: Read the codex on register_post_type
+	public function register_custom_posttypes() {
+		
 		// https://codex.wordpress.org/Function_Reference/register_post_type
 
 		// $args = array(
@@ -100,24 +115,27 @@ class Functions_Admin
 		// );
 		//
 		// register_post_type( 'custom-post-type' , $args );
+
 	}
 
 
-	public function register_shortcodes( )
-	{
-		/* NOTE: Read the codex on shortcodes */
+	public function register_shortcodes( ) {
+		
 		/* https://codex.wordpress.org/Shortcode_API */
+		
 		add_shortcode( 'span' , array(  $this , 'handle_span_tag') );
+
 	}
 
 
-	public function handle_span_tag( $atts , $content = null )
-	{
+	public function handle_span_tag( $atts , $content = null ) {
+		
 		$a = shortcode_atts( array(
 			'class' => 'classname'
 		), $atts );
 
 		return "<span class=\"{$a['class']}\">{$content}</span>";
+
 	}
 
 }
