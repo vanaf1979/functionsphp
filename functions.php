@@ -21,5 +21,6 @@ function run_functions() {
 	$functions->run();
 	
 }
+
 run_functions();
 ?>
