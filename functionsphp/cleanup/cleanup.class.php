@@ -2,17 +2,14 @@
 
 namespace FunctionsPhp\CleanUp;
 
-class CleanUp {
+use \FunctionsPhp\Includes\Theme as Theme;
 
-	private $theme_name;
-
-	private $version;
+class CleanUp extends Theme {
 
 
-	public function __construct( $theme_name , $version ) {
 
-		$this->theme_name = $theme_name;
-		$this->version = $version;
+	public function __construct() {
+
 
 	}
 

@@ -2,17 +2,14 @@
 
 namespace FunctionsPHP\Admin;
 
-class Admin {
+use \FunctionsPhp\Includes\Theme as Theme;
 
-	private $theme_name;
 
-	private $version;
-	
+class Admin extends Theme {
 
-	public function __construct( $theme_name , $version ) {
+
+	public function __construct( ) {
 		
-		$this->theme_name = $theme_name;
-		$this->version = $version;
 
 	}
 
@@ -23,7 +20,7 @@ class Admin {
 
 		if( $page == 'post.php' ) {
 
-			wp_enqueue_style( $this->theme_name  . '-css' , get_stylesheet_directory_uri() . '/public/css/admin.css' , array() , $this->version , 'screen' );
+			wp_enqueue_style( $this->text_domain . '-css' , $this->theme_path . '/public/css/admin.css' , array() , $this->version , 'screen' );
 			
 		}
 
@@ -36,7 +33,7 @@ class Admin {
 
 		if( $page == 'post.php' ) {
 
-			wp_enqueue_script( $this->theme_name . '-js' , get_stylesheet_directory_uri() . '/public/js/admin.js' , array() , $this->version , true );
+			wp_enqueue_script( $this->text_domain . '-js' , $this->theme_path . '/public/js/admin.js' , array() , $this->version , true );
 		
 		}
 		

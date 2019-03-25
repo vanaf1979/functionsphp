@@ -17,12 +17,11 @@ require_once get_template_directory() . '/functionsphp/functionsphp.class.php';
 
 use \FunctionsPhp\FunctionsPhp as FunctionsPhp;
 
-function run_functions() {
+function run_functionsphp() {
 
 	$functions = new FunctionsPhp();
-	$functions->run();
 	
 }
 
-run_functions();
+run_functionsphp();
 ?>

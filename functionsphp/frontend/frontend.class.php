@@ -2,17 +2,14 @@
 
 namespace FunctionsPhp\FrontEnd;
 
-class FrontEnd {
-
-	private $theme_name;
-
-	private $version;
+use \FunctionsPhp\Includes\Theme as Theme;
 
 
-	public function __construct( $theme_name , $version ) {
+class FrontEnd extends Theme {
+
+
+	public function __construct( ) {
 		
-		$this->theme_name = $theme_name;
-		$this->version = $version;
 
 	}
 		
@@ -21,7 +18,7 @@ class FrontEnd {
 
 		// Ref: https://developer.wordpress.org/reference/functions/wp_enqueue_style/
 		
-		wp_enqueue_style( $this->theme_name  . '-styles' , get_stylesheet_directory_uri() . '/style.css', array() , $this->version , 'screen' );
+		wp_enqueue_style( $this->text_domain  . '-styles' , $this->theme_path . '/style.css', array() , $this->version , 'screen' );
 
 	}
 
@@ -30,7 +27,7 @@ class FrontEnd {
 
 		// Ref: https://developer.wordpress.org/reference/functions/wp_enqueue_script/
 		
-		wp_enqueue_script( $this->theme_name . '-scripts' , get_stylesheet_directory_uri() . '/script.js' , array() , $this->version , true );
+		wp_enqueue_script( $this->text_domain . '-scripts' , $this->theme_path . '/script.js' , array() , $this->version , true );
 	
 	}
 

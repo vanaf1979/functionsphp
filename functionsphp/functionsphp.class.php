@@ -2,38 +2,35 @@
 
 namespace FunctionsPhp;
 
-use \JetFire\Autoloader\Autoload as AutoLoad;
+require_once get_template_directory( ) . '/functionsphp/includes/autoload.php';
+
+use \FunctionsPhp\Includes\Theme as Theme;
 use \FunctionsPhp\Includes\Loader as Loader;
 use \FunctionsPhp\FrontEnd\FrontEnd as FrontEnd;
 use \FunctionsPhp\Admin\Admin as Admin;
 use \FunctionsPhp\CleanUp\CleanUp as CleanUp;
 
 
-class Functionsphp {
+class Functionsphp extends Theme {
 
 	protected $loader;
 
-	protected $theme;
-
 
 	public function __construct() {
-
-		$this->autoload();
-
-		$this->theme = wp_get_theme();
 
 		$this->loader = new Loader();
 
 		$this->define_frontend_hooks();
 		$this->define_admin_hooks();
 		$this->define_cleanup_hooks();
+		$this->loader->run();
 
 	}
 
 
 	private function define_frontend_hooks() {
 
-		$frontend = new FrontEnd( $this->get_theme_name() , $this->get_version() );
+		$frontend = new FrontEnd();
 
 		// Enqueue styles and scripts.
 		$this->loader->add_action( 'wp_enqueue_scripts' , $frontend , 'enqueue_styles' , 10 , 1 );
@@ -50,7 +47,7 @@ class Functionsphp {
 
 	private function define_admin_hooks() {	
 
-		$admin = new Admin( $this->get_theme_name() , $this->get_version() );
+		$admin = new Admin();
 
 		// Enqueue styles and scripts.
 		$this->loader->add_action( 'admin_enqueue_scripts', $admin, 'enqueue_styles' );
@@ -73,7 +70,7 @@ class Functionsphp {
 
 	private function define_cleanup_hooks() {
 
-		$cleanup = new CleanUp( $this->get_theme_name() , $this->get_version() );
+		$cleanup = new CleanUp();
 
 		// Remove emoji's header.
 		$this->loader->add_action( 'init' , $cleanup , 'disable_emoji_dequeue_script' );
@@ -83,39 +80,6 @@ class Functionsphp {
 
 		// Remove wpembed scripts.
 		$this->loader->add_action( 'wp_footer' , $cleanup , 'remove_wpembed_scripts' );
-
-	}
-
-
-	private function autoload() {
-
-		require_once get_template_directory( ) . '/functionsphp/includes/autoloader.php';
-
-		$loader = new AutoLoad();
-		$loader->addNamespace( 'FunctionsPhp' , get_template_directory( ) . '/functionsphp/' );
-
-		$loader->register();
-
-	}
-
-
-	private function get_theme_name() {
-
-		return $this->theme->get('TextDomain');
-
-	}
-
-
-	private function get_version() {
-
-		return $this->theme->get('Version');
-
-	}
-
-
-	public function run() {
-
-		$this->loader->run();
 
 	}
 
