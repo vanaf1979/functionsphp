@@ -1,4 +1,13 @@
 <?php
+/**
+ * Admin area specific functionality of this theme.
+ *
+ * @link       http://example.com
+ * @since      1.0.0
+ *
+ * @package    FunctionsPhp
+ * @subpackage FunctionsPhp/Admin
+ */
 
 namespace FunctionsPHP\Admin;
 
@@ -8,12 +17,21 @@ use \FunctionsPhp\Includes\Theme as Theme;
 class Admin extends Theme {
 
 
+	/**
+	 * Initialize the class and set its properties.
+	 */
 	public function __construct( ) {
 		
+		return $this;
 
 	}
 
 
+	/**
+	 * Register stylesheets for the admin area.
+	 *
+	 * @since    1.0.0
+	 */
 	public function enqueue_styles( $page ) {
 		
 		// Ref: https://developer.wordpress.org/reference/functions/wp_enqueue_style/
@@ -27,6 +45,11 @@ class Admin extends Theme {
 	}
 
 
+	/**
+	 * Register JavaScripts for the admin area.
+	 *
+	 * @since    1.0.0
+	 */
 	public function enqueue_scripts( $page ) {
 		
 		// Ref: https://developer.wordpress.org/reference/functions/wp_enqueue_script/
@@ -40,6 +63,11 @@ class Admin extends Theme {
 	}
 
 
+	/**
+	 * Register nvigational menus.
+	 *
+	 * @since    1.0.0
+	 */
 	public function register_nav_menus() {
 		
 		// Ref: https://codex.wordpress.org/Navigation_Menus
@@ -55,6 +83,11 @@ class Admin extends Theme {
 	}
 
 
+	/**
+	 * Register widget areas.
+	 *
+	 * @since    1.0.0
+	 */
 	function register_widget_areas() {
 
 		// Ref: https://codex.wordpress.org/Widgetizing_Themes
@@ -98,6 +131,11 @@ class Admin extends Theme {
 	}
 
 
+	/**
+	 * Register custom posttypes.
+	 *
+	 * @since    1.0.0
+	 */
 	public function register_custom_posttypes() {
 		
 		// Ref: https://codex.wordpress.org/Function_Reference/register_post_type
@@ -114,26 +152,6 @@ class Admin extends Theme {
 		// );
 		//
 		// register_post_type( 'custom-post-type' , $args );
-
-	}
-
-
-	public function register_shortcodes( ) {
-		
-		/* Ref: https://codex.wordpress.org/Shortcode_API */
-		
-		add_shortcode( 'span' , array(  $this , 'handle_span_tag') );
-
-	}
-
-
-	public function handle_span_tag( $atts , $content = null ) {
-		
-		$a = shortcode_atts( array(
-			'class' => 'classname'
-		), $atts );
-
-		return "<span class=\"{$a['class']}\">{$content}</span>";
 
 	}
 

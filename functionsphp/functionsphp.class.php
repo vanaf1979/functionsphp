@@ -16,6 +16,11 @@ class Functionsphp extends Theme {
 	protected $loader;
 
 
+	/**
+	 * Define the core functionality.
+	 *
+	 * @since    1.0.0
+	 */
 	public function __construct() {
 
 		$this->loader = new Loader();
@@ -24,10 +29,16 @@ class Functionsphp extends Theme {
 		$this->define_admin_hooks();
 		$this->define_cleanup_hooks();
 		$this->loader->run();
-
+		
 	}
 
 
+	/**
+	 * Register hooks related to frontend functionality.
+	 *
+	 * @since    1.0.0
+	 * @access   private
+	 */
 	private function define_frontend_hooks() {
 
 		$frontend = new FrontEnd();
@@ -45,6 +56,12 @@ class Functionsphp extends Theme {
 	}
 
 
+	/**
+	 * Register hooks related to admin area functionality.
+	 *
+	 * @since    1.0.0
+	 * @access   private
+	 */
 	private function define_admin_hooks() {	
 
 		$admin = new Admin();
@@ -62,12 +79,15 @@ class Functionsphp extends Theme {
 		// Register custom posttypes.
 		$this->loader->add_action( 'init' , $admin , 'register_custom_posttypes' );
 
-		// Register custom shortcodes.
-		$this->loader->add_action( 'init' , $admin , 'register_shortcodes' );
-
 	}
 
 
+	/**
+	 * Register hooks related to cleanup functionality.
+	 *
+	 * @since    1.0.0
+	 * @access   private
+	 */
 	private function define_cleanup_hooks() {
 
 		$cleanup = new CleanUp();

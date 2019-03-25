@@ -1,4 +1,13 @@
 <?php
+/**
+ * Fontend specific functionality of this theme.
+ *
+ * @link       http://example.com
+ * @since      1.0.0
+ *
+ * @package    FunctionsPhp
+ * @subpackage FunctionsPhp/FrontEnd
+ */
 
 namespace FunctionsPhp\FrontEnd;
 
@@ -8,12 +17,21 @@ use \FunctionsPhp\Includes\Theme as Theme;
 class FrontEnd extends Theme {
 
 
+	/**
+	 * Initialize the class and set its properties.
+	 */
 	public function __construct( ) {
 		
+		return $this;
 
 	}
 		
 
+	/**
+	 * Register stylesheets for the frontend.
+	 *
+	 * @since    1.0.0
+	 */
 	public function enqueue_styles() {
 
 		// Ref: https://developer.wordpress.org/reference/functions/wp_enqueue_style/
@@ -23,6 +41,11 @@ class FrontEnd extends Theme {
 	}
 
 
+	/**
+	 * Register javascripts for the frontend.
+	 *
+	 * @since    1.0.0
+	 */
 	public function enqueue_scripts() {
 
 		// Ref: https://developer.wordpress.org/reference/functions/wp_enqueue_script/
@@ -32,6 +55,11 @@ class FrontEnd extends Theme {
 	}
 
 
+	/**
+	 * Register thumbnail sizes.
+	 *
+	 * @since    1.0.0
+	 */
 	public function register_thumbnail_sizes() {
 		
 		// Ref: https://developer.wordpress.org/reference/functions/add_theme_support/
@@ -45,6 +73,11 @@ class FrontEnd extends Theme {
 	}
 
 
+	/**
+	 * Add theme support.
+	 *
+	 * @since    1.0.0
+	 */
 	public function add_theme_support() {
 		
 		// Ref: https://developer.wordpress.org/reference/functions/add_theme_support/
