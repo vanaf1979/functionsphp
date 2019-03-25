@@ -27,7 +27,7 @@ class Functionsphp {
 		$this->define_frontend_hooks();
 		$this->define_admin_hooks();
 		$this->define_cleanup_hooks();
-	
+
 	}
 
 
@@ -94,7 +94,7 @@ class Functionsphp {
 		$loader = new AutoLoad();
 		$loader->addNamespace( 'FunctionsPhp' , get_template_directory( ) . '/functionsphp/' );
 
-        $loader->register();
+		$loader->register();
 
 	}
 
