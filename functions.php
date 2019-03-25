@@ -13,11 +13,11 @@ License URI:        http://opensource.org/licenses/MIT
 
 
 /* Run functions class */
-require_once get_template_directory() . '/functionsphp/class-functionsphp.php';
+require_once get_template_directory() . '/functionsphp/functionsphp.class.php';
 
 function run_functions() {
 
-	$functions = new Functionsphp();
+	$functions = new \FunctionsPhp\Functionsphp();
 	$functions->run();
 	
 }
