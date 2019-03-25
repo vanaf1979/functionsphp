@@ -13,6 +13,11 @@ use \FunctionsPhp\CleanUp\CleanUp as CleanUp;
 
 class Functionsphp extends Theme {
 
+	/**
+	 * Loader.
+	 *
+	 * @since    1.0.0
+	 */
 	protected $loader;
 
 
@@ -28,6 +33,7 @@ class Functionsphp extends Theme {
 		$this->define_frontend_hooks();
 		$this->define_admin_hooks();
 		$this->define_cleanup_hooks();
+
 		$this->loader->run();
 		
 	}
@@ -67,13 +73,13 @@ class Functionsphp extends Theme {
 		$admin = new Admin();
 
 		// Enqueue styles and scripts.
-		$this->loader->add_action( 'admin_enqueue_scripts', $admin, 'enqueue_styles' );
-		$this->loader->add_action( 'admin_enqueue_scripts', $admin, 'enqueue_scripts' );
+		$this->loader->add_action( 'admin_enqueue_scripts' , $admin , 'enqueue_styles' );
+		$this->loader->add_action( 'admin_enqueue_scripts' , $admin , 'enqueue_scripts' );
 
 		// Register navigational menus.
 		$this->loader->add_action( 'init' , $admin , 'register_nav_menus' );
 
-		// Register sidebar/widgert areas.
+		// Register widgert areas.
 		$this->loader->add_action( 'widgets_init' , $admin , 'register_widget_areas' );
 
 		// Register custom posttypes.

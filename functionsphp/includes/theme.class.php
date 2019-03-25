@@ -11,6 +11,7 @@
 
 namespace FunctionsPhp\Includes;
 
+
 class Theme {
 	
 
@@ -50,11 +51,11 @@ class Theme {
 
         $theme = wp_get_theme();
 
-        $this->themename = $theme->get('Name');
+        $this->themename = $theme->get( 'Name' );
 
-        $this->version = $theme->get('Version');
+        $this->version = $theme->get( 'Version' );
 
-        $this->textdomain = $theme->get('TextDomain');
+        $this->textdomain = $theme->get( 'TextDomain' );
 
         $this->theme_path = get_stylesheet_directory_uri();
 

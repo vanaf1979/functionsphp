@@ -11,6 +11,7 @@
 
 namespace FunctionsPHP\Admin;
 
+
 use \FunctionsPhp\Includes\Theme as Theme;
 
 
@@ -20,7 +21,7 @@ class Admin extends Theme {
 	/**
 	 * Initialize the class and set its properties.
 	 */
-	public function __construct( ) {
+	public function __construct() {
 		
 		return $this;
 
@@ -38,7 +39,7 @@ class Admin extends Theme {
 
 		if( $page == 'post.php' ) {
 
-			wp_enqueue_style( $this->text_domain . '-css' , $this->theme_path . '/public/css/admin.css' , array() , $this->version , 'screen' );
+			wp_enqueue_style( $this->text_domain . '-css' , $this->theme_path . '/public/css/admin.css' , array() , $this->version , 'all' );
 			
 		}
 

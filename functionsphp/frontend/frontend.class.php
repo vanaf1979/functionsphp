@@ -11,6 +11,7 @@
 
 namespace FunctionsPhp\FrontEnd;
 
+
 use \FunctionsPhp\Includes\Theme as Theme;
 
 
@@ -20,7 +21,7 @@ class FrontEnd extends Theme {
 	/**
 	 * Initialize the class and set its properties.
 	 */
-	public function __construct( ) {
+	public function __construct() {
 		
 		return $this;
 
@@ -36,7 +37,7 @@ class FrontEnd extends Theme {
 
 		// Ref: https://developer.wordpress.org/reference/functions/wp_enqueue_style/
 		
-		wp_enqueue_style( $this->text_domain  . '-styles' , $this->theme_path . '/style.css', array() , $this->version , 'screen' );
+		wp_enqueue_style( $this->text_domain  . '-styles' , $this->theme_path . '/style.css' , array() , $this->version , 'screen' );
 
 	}
 
