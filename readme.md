@@ -1,4 +1,4 @@
-### FunctionsPhp: A OOP WordPress functions.php boilerplate.
+### FunctionsPhp: A Maintainable OOP WordPress functions.php boilerplate.
 
 #### What?
 FunctionsPhp is a Maintainable OOP WordPress functions.php boilerplate. based upon the [WordPress Plugin Boilerplate](https://github.com/devinvinson/WordPress-Plugin-Boilerplate/) by [Devin Vinson](https://twitter.com/DevinVinson). I refactored WPPB to be used in theme development and to include Php namespaces and Autoloading. 
