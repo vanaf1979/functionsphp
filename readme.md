@@ -10,4 +10,4 @@ Becouse of it's legacy WordPress by nature is not written in modern Php. But tha
 It's basic design is that all WordPress action and filter hooks are defined within the main class (functionsphp.class.php), and the hook callback functions are placed within seperated classes (admin/admin.class.php, and frontend/frontend.class.php etc).
 
 #### Now what?
-Download, check it out and make it your own. The code should be pretty self explanitory. I could really use feedback some on this so if you have any suggestions for improvement please do let me know. You can find me over at [Twitter @Vanaf1979](https://twitter.com/Vanaf1979).
+Download, check it out and make it your own. The code should be pretty self explanitory. I could really use some feedback on this so if you have any suggestions for improvement please do let me know. You can find me over at [Twitter @Vanaf1979](https://twitter.com/Vanaf1979).
