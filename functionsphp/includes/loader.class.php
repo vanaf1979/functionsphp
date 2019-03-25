@@ -1,6 +1,8 @@
 <?php
 
-class Functionsphp_Loader {
+namespace FunctionsPhp\Includes;
+
+class Loader {
 	
 	protected $actions;
 

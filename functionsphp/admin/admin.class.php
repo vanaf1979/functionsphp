@@ -1,6 +1,8 @@
 <?php
 
-class Functionsphp_Admin {
+namespace FunctionsPHP\Admin;
+
+class Admin {
 
 	private $theme_name;
 

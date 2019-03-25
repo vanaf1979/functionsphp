@@ -1,6 +1,8 @@
 <?php
 
-class Functionsphp_Public {
+namespace FunctionsPhp\FrontEnd;
+
+class FrontEnd {
 
 	private $theme_name;
 

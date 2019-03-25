@@ -1,6 +1,8 @@
 <?php
 
-class Functionsphp_Global {
+namespace FunctionsPhp\CleanUp;
+
+class CleanUp {
 
 	private $theme_name;
 
