@@ -1,3 +1,8 @@
+
+<p align="center">
+ <img src="https://i.postimg.cc/rptzL5JZ/functions-php.jpg">
+</p>
+
 ### FunctionsPhp: A Maintainable OOP WordPress functions.php boilerplate.
 
 #### What?
