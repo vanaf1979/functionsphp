@@ -12,16 +12,6 @@ License URI:        http://opensource.org/licenses/MIT
 */
 
 
-/* Run functions class */
-require_once get_template_directory() . '/functionsphp/functionsphp.class.php';
-
-use \FunctionsPhp\FunctionsPhp as FunctionsPhp;
-
-function run_functionsphp() {
-
-	$functions = new FunctionsPhp();
-	
-}
-
-run_functionsphp();
+/* Bootstrap FunctionsPhp */
+require_once get_template_directory() . '/functionsphp/includes/bootstrap.php';
 ?>
