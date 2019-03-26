@@ -1,15 +1,11 @@
 
 <?php
 
-require_once get_template_directory( ) . '/functionsphp/includes/autoloader.php';
+require_once get_template_directory( ) . '/functionsphp/includes/autoloader.class.php';
 
-use \JetFire\Autoloader\Autoload as AutoLoad;
+use FunctionsPhp\includes\Autoloader as Autoloader;
 
-$loader = new AutoLoad();
-
-$loader->addNamespace( 'FunctionsPhp' , get_template_directory( ) . '/functionsphp/' );
-
-$loader->register();
+$autoloader = new Autoloader( 'FunctionsPhp' , get_template_directory( ) , '.class.php' );
 
 
 /* Run functions class */

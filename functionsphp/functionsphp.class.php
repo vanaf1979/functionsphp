@@ -2,7 +2,6 @@
 
 namespace FunctionsPhp;
 
-
 use \FunctionsPhp\Includes\Theme as Theme;
 use \FunctionsPhp\Includes\Loader as Loader;
 use \FunctionsPhp\FrontEnd\FrontEnd as FrontEnd;
@@ -12,19 +11,9 @@ use \FunctionsPhp\CleanUp\CleanUp as CleanUp;
 
 class Functionsphp extends Theme {
 
-	/**
-	 * Loader.
-	 *
-	 * @since    1.0.0
-	 */
 	protected $loader;
 
 
-	/**
-	 * Define the core functionality.
-	 *
-	 * @since    1.0.0
-	 */
 	public function __construct() {
 
 		$this->loader = new Loader();
@@ -38,12 +27,6 @@ class Functionsphp extends Theme {
 	}
 
 
-	/**
-	 * Register hooks related to frontend functionality.
-	 *
-	 * @since    1.0.0
-	 * @access   private
-	 */
 	private function define_frontend_hooks() {
 
 		$frontend = new FrontEnd();
@@ -61,12 +44,6 @@ class Functionsphp extends Theme {
 	}
 
 
-	/**
-	 * Register hooks related to admin area functionality.
-	 *
-	 * @since    1.0.0
-	 * @access   private
-	 */
 	private function define_admin_hooks() {	
 
 		$admin = new Admin();
@@ -87,12 +64,6 @@ class Functionsphp extends Theme {
 	}
 
 
-	/**
-	 * Register hooks related to cleanup functionality.
-	 *
-	 * @since    1.0.0
-	 * @access   private
-	 */
 	private function define_cleanup_hooks() {
 
 		$cleanup = new CleanUp();

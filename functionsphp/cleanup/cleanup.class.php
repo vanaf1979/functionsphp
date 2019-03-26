@@ -18,9 +18,6 @@ use \FunctionsPhp\Includes\Theme as Theme;
 class CleanUp extends Theme {
 
 
-	/**
-	 * Initialize the class and set its properties.
-	 */
 	public function __construct() {
 
 		return $this;
@@ -28,11 +25,6 @@ class CleanUp extends Theme {
 	}
 
 
-	/**
-	 * Disable emoji dequeue script.
-	 *
-	 * @since    1.0.0
-	 */
 	public function disable_emoji_dequeue_script() {
 
 		remove_action( 'wp_head' , 'print_emoji_detection_script' , 7 );
@@ -43,11 +35,6 @@ class CleanUp extends Theme {
 	}
 
 
-	/**
-	 * Remove unwanted styff from the header.
-	 *
-	 * @since    1.0.0
-	 */
 	public function clean_up_header() {
 
 		remove_action( 'wp_head' , 'rsd_link' );
@@ -67,12 +54,7 @@ class CleanUp extends Theme {
 
 	}
 
-	
-	/**
-	 * Remove wpembed scripts.
-	 *
-	 * @since    1.0.0
-	 */
+
 	public function remove_wpembed_scripts() {
 
 		wp_deregister_script( 'wp-embed' );

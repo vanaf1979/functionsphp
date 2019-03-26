@@ -18,9 +18,6 @@ use \FunctionsPhp\Includes\Theme as Theme;
 class Admin extends Theme {
 
 
-	/**
-	 * Initialize the class and set its properties.
-	 */
 	public function __construct() {
 		
 		return $this;
@@ -28,15 +25,8 @@ class Admin extends Theme {
 	}
 
 
-	/**
-	 * Register stylesheets for the admin area.
-	 *
-	 * @since    1.0.0
-	 */
 	public function enqueue_styles( $page ) {
 		
-		// Ref: https://developer.wordpress.org/reference/functions/wp_enqueue_style/
-
 		if( $page == 'post.php' ) {
 
 			wp_enqueue_style( $this->text_domain . '-css' , $this->theme_path . '/public/css/admin.css' , array() , $this->version , 'all' );
@@ -46,15 +36,8 @@ class Admin extends Theme {
 	}
 
 
-	/**
-	 * Register JavaScripts for the admin area.
-	 *
-	 * @since    1.0.0
-	 */
 	public function enqueue_scripts( $page ) {
 		
-		// Ref: https://developer.wordpress.org/reference/functions/wp_enqueue_script/
-
 		if( $page == 'post.php' ) {
 
 			wp_enqueue_script( $this->text_domain . '-js' , $this->theme_path . '/public/js/admin.js' , array() , $this->version , true );
@@ -64,15 +47,8 @@ class Admin extends Theme {
 	}
 
 
-	/**
-	 * Register nvigational menus.
-	 *
-	 * @since    1.0.0
-	 */
 	public function register_nav_menus() {
 		
-		// Ref: https://codex.wordpress.org/Navigation_Menus
-
 		register_nav_menus(
 			array(
 				'header-menu' => __( 'Header Menu' ),
@@ -84,14 +60,7 @@ class Admin extends Theme {
 	}
 
 
-	/**
-	 * Register widget areas.
-	 *
-	 * @since    1.0.0
-	 */
 	function register_widget_areas() {
-
-		// Ref: https://codex.wordpress.org/Widgetizing_Themes
 		
 		register_sidebar( array(
 			'name'          => 'Footer area one',
@@ -132,15 +101,8 @@ class Admin extends Theme {
 	}
 
 
-	/**
-	 * Register custom posttypes.
-	 *
-	 * @since    1.0.0
-	 */
 	public function register_custom_posttypes() {
 		
-		// Ref: https://codex.wordpress.org/Function_Reference/register_post_type
-
 		// $args = array(
 		// 	'label' => __('Portfolio'),
 		// 	'singular_label' => __('Project'),
