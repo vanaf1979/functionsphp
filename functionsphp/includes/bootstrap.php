@@ -9,8 +9,6 @@ $autoloader = new Autoloader( 'FunctionsPhp' , get_template_directory( ) , '.cla
 
 
 /* Run functions class */
-require_once get_template_directory() . '/functionsphp/functionsphp.class.php';
-
 use \FunctionsPhp\FunctionsPhp as FunctionsPhp;
 
 function run_functionsphp() {
