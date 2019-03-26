@@ -20,7 +20,7 @@ class Autoloader {
 
     private $extention = null;
 
-    
+
     public function __construct( $namespace , $basePath , $extention ) {
 
         $this->mainNamespace = $namespace;
@@ -30,7 +30,7 @@ class Autoloader {
         $this->extention = $extention;
 
         $this->registerAutoloader();
-        
+
     }
 
 
@@ -80,6 +80,6 @@ class Autoloader {
         return strtolower( str_replace( '\\' , DIRECTORY_SEPARATOR , $namespace ) );
 
     }
-    
+
 }
 

@@ -14,7 +14,7 @@ use \FunctionsPhp\FunctionsPhp as FunctionsPhp;
 function run_functionsphp() {
 
 	$functions = new FunctionsPhp();
-	
+
 }
 
 run_functionsphp();

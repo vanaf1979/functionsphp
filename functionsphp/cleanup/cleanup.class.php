@@ -58,7 +58,7 @@ class CleanUp extends Theme {
 	public function remove_wpembed_scripts() {
 
 		wp_deregister_script( 'wp-embed' );
-		
+
 	}
 
 }

@@ -3,22 +3,22 @@
 
 <html>
 
-  <head>
-      
-      <?php wp_head(); ?>
+    <head>
 
-  </head>
+        <?php wp_head(); ?>
 
-  <body <?php body_class(); ?>>
+    </head>
 
-    <div id="app">
+    <body <?php body_class(); ?>>
 
-      <h1>FunctionsPhp</h1>
+        <div id="app">
 
-    </div>
+            <h1>FunctionsPhp</h1>
 
-    <?php wp_footer(); ?>
+        </div>
 
-  </body>
+        <?php wp_footer(); ?>
+
+    </body>
 
 </html>
