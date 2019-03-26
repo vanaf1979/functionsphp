@@ -2,7 +2,6 @@
 
 namespace FunctionsPhp;
 
-require_once get_template_directory( ) . '/functionsphp/includes/autoload.php';
 
 use \FunctionsPhp\Includes\Theme as Theme;
 use \FunctionsPhp\Includes\Loader as Loader;
