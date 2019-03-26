@@ -9,7 +9,7 @@ use \FunctionsPhp\Admin\Admin as Admin;
 use \FunctionsPhp\CleanUp\CleanUp as CleanUp;
 
 
-class Functionsphp extends Theme {
+class FunctionsPhp extends Theme {
 
 	protected $loader;
 
