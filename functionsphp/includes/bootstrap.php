@@ -1,6 +1,6 @@
 
 <?php
-
+/* Configure autoloading */
 require_once get_template_directory( ) . '/functionsphp/includes/autoloader.class.php';
 
 use FunctionsPhp\includes\Autoloader as Autoloader;

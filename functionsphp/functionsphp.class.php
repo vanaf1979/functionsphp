@@ -1,4 +1,12 @@
 <?php
+/**
+ * This class definse all hooks.
+ *
+ * @link       http://example.com
+ * @since      1.0.0
+ *
+ * @package    FunctionsPhp
+ */
 
 namespace FunctionsPhp;
 

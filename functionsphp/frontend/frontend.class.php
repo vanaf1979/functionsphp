@@ -11,7 +11,6 @@
 
 namespace FunctionsPhp\FrontEnd;
 
-
 use \FunctionsPhp\Includes\Theme as Theme;
 
 
