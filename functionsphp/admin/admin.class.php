@@ -18,11 +18,7 @@ use \FunctionsPhp\Includes\Theme as Theme;
 class Admin extends Theme {
 
 
-	public function __construct() {
-
-		return $this;
-
-	}
+	public function __construct() { }
 
 
 	public function enqueue_styles( $page ) {
@@ -101,21 +97,21 @@ class Admin extends Theme {
 	}
 
 
-public function register_custom_posttypes() {
+    public function register_custom_posttypes() {
 
-// $args = array(
-// 	'label' => __('Portfolio'),
-// 	'singular_label' => __('Project'),
-// 	'public' => true,
-// 	'show_ui' => true,
-// 	'capability_type' => 'post',
-// 	'hierarchical' => false,
-// 	'rewrite' => array('slug' => 'POST-TYPE-SLUG-HERE'),
-// 	'supports' => array('title', 'editor', 'thumbnail')
-// );
-//
-// register_post_type( 'custom-post-type' , $args );
+        // $args = array(
+        // 	'label' => __('Portfolio'),
+        // 	'singular_label' => __('Project'),
+        // 	'public' => true,
+        // 	'show_ui' => true,
+        // 	'capability_type' => 'post',
+        // 	'hierarchical' => false,
+        // 	'rewrite' => array('slug' => 'POST-TYPE-SLUG-HERE'),
+        // 	'supports' => array('title', 'editor', 'thumbnail')
+        // );
+        //
+        // register_post_type( 'custom-post-type' , $args );
 
-}
+    }
 
 }

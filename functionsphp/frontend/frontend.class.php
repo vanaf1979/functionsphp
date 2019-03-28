@@ -11,17 +11,14 @@
 
 namespace FunctionsPhp\FrontEnd;
 
+
 use \FunctionsPhp\Includes\Theme as Theme;
 
 
 class FrontEnd extends Theme {
 
 
-	public function __construct() {
-
-		return $this;
-
-	}
+	public function __construct() { }
 
 
 	public function enqueue_styles() {

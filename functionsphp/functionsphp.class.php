@@ -10,6 +10,7 @@
 
 namespace FunctionsPhp;
 
+
 use \FunctionsPhp\Includes\Theme as Theme;
 use \FunctionsPhp\Includes\Loader as Loader;
 use \FunctionsPhp\FrontEnd\FrontEnd as FrontEnd;
@@ -20,6 +21,7 @@ use \FunctionsPhp\CleanUp\CleanUp as CleanUp;
 class FunctionsPhp extends Theme {
 
     protected $loader;
+    
 
     public function __construct() {
 
