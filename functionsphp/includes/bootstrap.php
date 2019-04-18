@@ -13,7 +13,7 @@ use \FunctionsPhp\FunctionsPhp as FunctionsPhp;
 
 function run_functionsphp() {
 
-	$functions = new FunctionsPhp();
+    $functions = new FunctionsPhp();
 
 }
 
