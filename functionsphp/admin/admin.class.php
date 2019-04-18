@@ -18,104 +18,104 @@ use \FunctionsPhp\Includes\Theme as Theme;
 class Admin extends Theme {
 
 
-	public function __construct() { 
+    public function __construct() { 
 
-		parent::__construct();
+        parent::__construct();
 
-	}
-
-
-	public function enqueue_styles( $page ) {
-
-		if( $page == 'post.php' ) {
-
-			wp_enqueue_style( $this->text_domain . '-css' , $this->theme_path . '/public/css/admin.css' , array() , $this->version , 'all' );
-
-		}
-
-	}
+    }
 
 
-	public function enqueue_scripts( $page ) {
+    public function enqueue_styles( $page ) {
 
-		if( $page == 'post.php' ) {
+        if( $page == 'post.php' ) {
 
-			wp_enqueue_script( $this->text_domain . '-js' , $this->theme_path . '/public/js/admin.js' , array() , $this->version , true );
+            wp_enqueue_style( $this->text_domain . '-css' , $this->theme_path . '/public/css/admin.css' , array() , $this->version , 'all' );
 
-		}
+        }
 
-	}
-
-
-	public function register_nav_menus() {
-
-		register_nav_menus(
-			array(
-				'header-menu' => __( 'Header Menu' ),
-				'footer-menu' => __( 'Footer Menu' ),
-				'mobile-menu' => __( 'Mobile Menu' )
-			)
-		);
-
-	}
+    }
 
 
-	function register_widget_areas() {
+    public function enqueue_scripts( $page ) {
 
-		register_sidebar( array(
-			'name'          => 'Footer area one',
-			'id'            => 'footer_area_one',
-			'before_widget' => '<div>',
-			'after_widget'  => '</div>',
-			'before_title'  => '<h4 class="footer-area-one">',
-			'after_title'   => '</h4>',
-		));
+        if( $page == 'post.php' ) {
 
-		register_sidebar( array(
-			'name'          => 'Footer area two',
-			'id'            => 'footer_area_two',
-			'before_widget' => '<div>',
-			'after_widget'  => '</div>',
-			'before_title'  => '<h4 class="footer-area-two">',
-			'after_title'   => '</h4>',
-		));
+            wp_enqueue_script( $this->text_domain . '-js' , $this->theme_path . '/public/js/admin.js' , array() , $this->version , true );
 
-		register_sidebar( array(
-			'name'          => 'Footer area three',
-			'id'            => 'footer_area_three',
-			'before_widget' => '<div>',
-			'after_widget'  => '</div>',
-			'before_title'  => '<h4 class="footer-area-three">',
-			'after_title'   => '</h4>',
-		));
+        }
 
-		register_sidebar( array(
-			'name'          => 'Footer area four',
-			'id'            => 'footer_area_four',
-			'before_widget' => '<div>',
-			'after_widget'  => '</div>',
-			'before_title'  => '<h4 class="footer-area-four">',
-			'after_title'   => '</h4>',
-		));
-
-	}
+    }
 
 
-	public function register_custom_posttypes() {
+    public function register_nav_menus() {
 
-		// $args = array(
-		// 	'label' => __('Portfolio'),
-		// 	'singular_label' => __('Project'),
-		// 	'public' => true,
-		// 	'show_ui' => true,
-		// 	'capability_type' => 'post',
-		// 	'hierarchical' => false,
-		// 	'rewrite' => array('slug' => 'POST-TYPE-SLUG-HERE'),
-		// 	'supports' => array('title', 'editor', 'thumbnail')
-		// );
-		
-		// register_post_type( 'custom-post-type' , $args );
+        register_nav_menus(
+            array(
+                'header-menu' => __( 'Header Menu' ),
+                'footer-menu' => __( 'Footer Menu' ),
+                'mobile-menu' => __( 'Mobile Menu' )
+            )
+        );
 
-	}
+    }
+
+
+    function register_widget_areas() {
+
+        register_sidebar( array(
+            'name'          => 'Footer area one',
+            'id'            => 'footer_area_one',
+            'before_widget' => '<div>',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h4 class="footer-area-one">',
+            'after_title'   => '</h4>',
+        ));
+
+        register_sidebar( array(
+            'name'          => 'Footer area two',
+            'id'            => 'footer_area_two',
+            'before_widget' => '<div>',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h4 class="footer-area-two">',
+            'after_title'   => '</h4>',
+        ));
+
+        register_sidebar( array(
+            'name'          => 'Footer area three',
+            'id'            => 'footer_area_three',
+            'before_widget' => '<div>',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h4 class="footer-area-three">',
+            'after_title'   => '</h4>',
+        ));
+
+        register_sidebar( array(
+            'name'          => 'Footer area four',
+            'id'            => 'footer_area_four',
+            'before_widget' => '<div>',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h4 class="footer-area-four">',
+            'after_title'   => '</h4>',
+        ));
+
+    }
+
+
+    public function register_custom_posttypes() {
+
+        // $args = array(
+        // 	'label' => __('Portfolio'),
+        // 	'singular_label' => __('Project'),
+        // 	'public' => true,
+        // 	'show_ui' => true,
+        // 	'capability_type' => 'post',
+        // 	'hierarchical' => false,
+        // 	'rewrite' => array('slug' => 'POST-TYPE-SLUG-HERE'),
+        // 	'supports' => array('title', 'editor', 'thumbnail')
+        // );
+
+        // register_post_type( 'custom-post-type' , $args );
+
+    }
 
 }
