@@ -25,6 +25,8 @@ class FunctionsPhp extends Theme {
 
     public function __construct() {
 
+        parent::__construct();
+
         $this->loader = new Loader();
 
         $this->define_frontend_hooks();

@@ -18,7 +18,11 @@ use \FunctionsPhp\Includes\Theme as Theme;
 class CleanUp extends Theme {
 
 
-	public function __construct() { }
+    public function __construct() { 
+
+        parent::__construct();
+
+    }
 
 
 	public function disable_emoji_dequeue_script() {
