@@ -65,36 +65,40 @@ class Admin extends Theme {
         register_sidebar( array(
             'name'          => 'Footer area one',
             'id'            => 'footer_area_one',
-            'before_widget' => '<div>',
-            'after_widget'  => '</div>',
-            'before_title'  => '<h4 class="footer-area-one">',
+            'description'   => 'This widget area discription',
+            'before_widget' => '<section class="footer-area footer-area-one">',
+            'after_widget'  => '</section>',
+            'before_title'  => '<h4>',
             'after_title'   => '</h4>',
         ));
 
         register_sidebar( array(
             'name'          => 'Footer area two',
             'id'            => 'footer_area_two',
-            'before_widget' => '<div>',
-            'after_widget'  => '</div>',
-            'before_title'  => '<h4 class="footer-area-two">',
+            'description'   => 'This widget area discription',
+            'before_widget' => '<section class="footer-area footer-area-two">',
+            'after_widget'  => '</section>',
+            'before_title'  => '<h4>',
             'after_title'   => '</h4>',
         ));
 
         register_sidebar( array(
             'name'          => 'Footer area three',
             'id'            => 'footer_area_three',
-            'before_widget' => '<div>',
-            'after_widget'  => '</div>',
-            'before_title'  => '<h4 class="footer-area-three">',
+            'description'   => 'This widget area discription',
+            'before_widget' => '<section class="footer-area footer-area-three">',
+            'after_widget'  => '</section>',
+            'before_title'  => '<h4>',
             'after_title'   => '</h4>',
         ));
 
         register_sidebar( array(
             'name'          => 'Footer area four',
             'id'            => 'footer_area_four',
-            'before_widget' => '<div>',
-            'after_widget'  => '</div>',
-            'before_title'  => '<h4 class="footer-area-four">',
+            'description'   => 'This widget area discription',
+            'before_widget' => '<section class="footer-area footer-area-three">',
+            'after_widget'  => '</section>',
+            'before_title'  => '<h4>',
             'after_title'   => '</h4>',
         ));
 
