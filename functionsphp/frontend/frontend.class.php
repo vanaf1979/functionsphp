@@ -27,12 +27,24 @@ class FrontEnd extends Theme {
 
     public function enqueue_styles() {
 
+        if( $this->get_template() == 'index.php' ) {
+
+            wp_enqueue_style( $this->text_domain  . '-frontend' , $this->theme_path . '/front-page.css' , array() , $this->version , 'all' );
+
+        }
+
         wp_enqueue_style( $this->text_domain  . '-styles' , $this->theme_path . '/style.css' , array() , $this->version , 'all' );
 
     }
 
 
     public function enqueue_scripts() {
+
+        if( $this->get_template() == 'front-page.php' ) {
+
+            wp_enqueue_script( $this->text_domain . '-frontend' , $this->theme_path . '/front-page.js' , array() , $this->version , true );
+
+        }
 
         wp_enqueue_script( $this->text_domain . '-scripts' , $this->theme_path . '/script.js' , array() , $this->version , true );
 
