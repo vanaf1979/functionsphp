@@ -29,11 +29,11 @@ class Theme {
 
         $theme = wp_get_theme();
 
-        $this->themename = $theme->get( 'Name' );
+        $this->theme_name = $theme->get( 'Name' );
 
         $this->version = $theme->get( 'Version' );
 
-        $this->textdomain = $theme->get( 'TextDomain' );
+        $this->text_domain = $theme->get( 'TextDomain' );
 
         $this->theme_path = get_template_directory_uri();
 
