@@ -52,6 +52,9 @@ class FunctionsPhp extends Theme {
         // Register thumbnail sizes.
         $this->loader->add_action( 'init' , $frontend , 'register_thumbnail_sizes' , 1 );
 
+        // Load theme's translated strings.
+        $this->loader->add_action( 'after_setup_theme' , $frontend , 'load_theme_textdomain' , 1 );
+
     }
 
 

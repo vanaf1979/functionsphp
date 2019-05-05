@@ -70,4 +70,11 @@ class FrontEnd extends Theme {
 
     }
 
+
+    public function load_theme_textdomain() {
+
+        load_theme_textdomain( $this->text_domain , $this->theme_path . '/languages' );
+
+    }
+
 }
